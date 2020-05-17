@@ -1,0 +1,199 @@
+/* css reset */
+* {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 调整图片大小 */
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* style */
+/* body的border可见区域和background的区域有区别 */
+body {
+  background: #eee;
+}
+
+.globalHeader {
+  /* 居中 */
+  margin: 20px;
+  justify-content: space-between;
+}
+
+@media (min-width: 500px) {
+  .globalHeader{
+    margin: 100px 0 60px;
+  }
+}
+
+.searchForm {
+  /* flex布局 */
+  display: flex;
+}
+
+@media (min-width: 500px) {
+  .searchForm {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.searchForm > input {
+  width: 100%;
+  margin-right: 10px;
+  height: 40px;
+  padding: 0 10px;
+  /* 先覆盖, 然后再写圆角 */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.searchForm > button {
+  /* 防止button字体换行 */
+  white-space: nowrap;
+  padding: 0 28px;
+  background: #06afd5;
+  color: white;
+  /* 先覆盖, 然后再写圆角 */
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+@media (min-width: 500px) {
+  .globalMain {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+.siteList {
+  margin: 20px;
+  display: flex;
+  /* 平均布局 */
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@media (min-width: 500px) {
+  .siteList{
+    margin-left: 0;
+    margin-right: -25px;
+    justify-content: flex-start;
+  }
+}
+
+.siteList > li {
+  /* site上下之间间隙 */
+  margin-bottom: 10px;
+}
+
+@media (min-width: 500px) {
+  .siteList > li {
+    margin-right: 25px;
+  }
+}
+
+/* 完整写法: .sitList>li .site {} */
+.siteList .site {
+  width: 160px;
+  display: flex;
+  /* 垂直水平居中 */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: white;
+  /* 先覆盖, 然后再写圆角 */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 20px 0;
+  position:relative;
+  cursor: pointer;
+}
+
+/* 同上 */
+.siteList .site > .logo {
+  width: 64px;
+  height: 64px;
+  font-size: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+/* 同上 */
+.siteList .site > .link {
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.siteList .site > .close {
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  display: none;
+  cursor: default;
+}
+
+.siteList .site:hover > .close {
+  display: block;
+}
+/* 同上 */
+.siteList .addButton {
+  width: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 0;
+  background: white;
+  /* 先覆盖, 然后再写圆角 */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* 同上 */
+.siteList .addButton .iconWrapper {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 完整写法: .siteList>li .addButton>.iconWrapper .icon {}*/
+.siteList .addButton .icon {
+  width: 56px;
+  height: 56px;
+}
+
+/* 同上 */
+.siteList .addButton .text {
+  font-size: 14px;
+  margin-top: 4px;
+}
